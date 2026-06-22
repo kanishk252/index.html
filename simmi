@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 21st Birthday Simmi!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #4A3018; /* Brown Background */
+            color: #FFD700; /* Sunflower Yellow Text */
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Start Screen */
+        #start-screen {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #3e2723;
+        }
+
+        .start-btn {
+            background-color: #FFC107;
+            color: #4A3018;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+
+        .start-btn:hover {
+            background-color: #FFD700;
+            transform: scale(1.1);
+        }
+
+        /* Main Content */
+        #main-content {
+            display: none;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #FFF8DC;
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+
+        /* Funny Questions Section */
+        .qna-box {
+            background-color: rgba(255, 215, 0, 0.1);
+            border: 2px dashed #FFD700;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+        }
+
+        .ans-btn {
+            background-color: #FF8C00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 15px;
+            color: #FFF;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* Photo Section */
+        .photo-section {
+            margin: 40px 0;
+        }
+
+        .photo-frame {
+            border: 5px solid #FFD700;
+            border-radius: 15px;
+            width: 300px;
+            height: auto;
+            box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Envelope Section */
+        .envelope-container {
+            margin-top: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .envelope-container:hover {
+            transform: scale(1.1);
+        }
+
+        .envelope-icon {
+            font-size: 80px;
+        }
+
+        /* Pop-up Letter */
+        #letter-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #FFF8DC;
+            color: #4A3018;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.8);
+            width: 80%;
+            max-width: 400px;
+            z-index: 1000;
+        }
+
+        .close-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            float: right;
+        }
+
+        /* Overlay */
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 999;
+        }
+
+        .sunflower {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Audio (Direct links added for Happy Birthday tune) -->
+    <audio id="bday-tune" loop>
+        <source src="https://upload.wikimedia.org/wikipedia/commons/6/69/Happy_Birthday_to_You_%28instrumental%29.ogg" type="audio/ogg">
+    </audio>
+
+    <!-- Start Screen -->
+    <div id="start-screen">
+        <h1 style="color: #FFD700;">Happy 21st Birthday Simmi! 🌻</h1>
+        <button class="start-btn" onclick="startWebsite()">Click to Open Surprise 🌻</button>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <h1>Happy Birthday Simmi 🌻</h1>
+        <h2>By your better half, Kanishk ❤️</h2>
+
+        <!-- Question 1 -->
+        <div class="qna-box">
+            <p><strong>Question 1:</strong> 21 saal ki ho gayi ho, par itni cute aur samajhdar kaise ho?</p>
+            <button class="ans-btn" onclick="showAnswer('ans1')">Click for Truth</button>
+            <p id="ans1" class="answer">Kyunki tumhare paas mere jaisa better half jo hai! 😎 Hawa mein mat udna zyada! 😂🌻</p>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="qna-box">
+            <p><strong>Question 2:</strong> Tumhe pata hai is duniya mein sabse lucky insaan kon hai?</p>
+            <button class="ans-btn" onclick="showAnswer('ans2')">Click to Reveal</button>
+            <p id="ans2" class="answer">Main! Kyunki mere paas tum ho meri jaan. ❤️🙈</p>
+        </div>
+
+        <!-- Photo Section -->
+        <div class="photo-section">
+            <p class="sunflower">🌻 🌻 🌻</p>
+            <!-- BAS YAHA APNI PHOTO KA LINK DALNA HAI -->
+            <img class="photo-frame" src="**TUMHARI_PHOTO_KI_LINK_YAHA_DAALO.jpg**" alt="Kanishk and Simmi">
+            <p class="sunflower">🌻 🌻 🌻</p>
+        </div>
+
+        <!-- Envelope Section -->
+        <div class="envelope-container" onclick="openLetter()">
+            <p style="font-size: 20px;">Open your letter 👇</p>
+            <div class="envelope-icon">✉️🌻</div>
+        </div>
+    </div>
+
+    <!-- Letter Pop-up -->
+    <div id="overlay" onclick="closeLetter()"></div>
+    <div id="letter-popup">
+        <button class="close-btn" onclick="closeLetter()">X</button>
+        <h2 style="color: #d35400; font-size: 1.8em;">To My Beautiful Simmi,</h2>
+        <p style="font-size: 1.2em; line-height: 1.6;">
+            Happy 21st Birthday, meri jaan! ❤️<br>
+            Tum meri zindagi ka sabse pyara hissa ho. Tumhari hasi bilkul in sunflowers ki tarah meri poori duniya roshan kar deti hai. <br>
+            Khuda kare tumhe is saal duniya ki saari khushiyan milen, aur tumhara har sapna poora ho. <br>
+            Hamesha aise hi muskurati rehna mere paas.<br><br>
+            <strong>Love you endlessly,<br>Kanishk 🌻</strong>
+        </p>
+    </div>
+
+    <script>
+        function startWebsite() {
+            document.getElementById('start-screen').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+            
+            let audio = document.getElementById('bday-tune');
+            audio.play();
+        }
+
+        function showAnswer(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function openLetter() {
+            document.getElementById('letter-popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeLetter() {
+            document.getElementById('letter-popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
